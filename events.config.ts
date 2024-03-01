@@ -36,7 +36,7 @@ export const events = [
         name: 'Sortie Rap et Teaser',
         content: 'A definir'
       },
-      // ...defaultBreak,
+      ...defaultBreak,
       {
         id: 'bal',
         start: '19:30',
