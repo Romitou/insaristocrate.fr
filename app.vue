@@ -66,32 +66,53 @@
 
 <!--    CONTENT -->
     <div class="flex-grow flex-col h-full z-10">
-      <div class="relative">
-        <video class="w-full h-auto" autoplay muted loop preload="auto">
-          <source src="https://media.insaristocrate.fr/insaristocrate-rap.mp4" type="video/mp4">
-        </video>
-        <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-10 px-10">
-          <div class="text-7xl font-della">
-            INS'Aristocrate
-          </div>
+      <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-6 space-y-3 sm:space-y-0 p-3 sm:p-4 lg:p-5 xl:p-6">
+        <div>
+          <a href="https://www.youtube.com/watch?v=Fpn1imb9qZg">
+            <div class="relative rounded-lg overflow-hidden">
+              <video class="w-full h-auto" autoplay muted loop preload="auto">
+                <source src="https://media.insaristocrate.fr/insaristocrate-rap.mp4" type="video/mp4">
+              </video>
+              <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
+                <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
+                  Trailer
+                </div>
+                <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
+                  <ChevronDoubleRightIcon class="block h-8 md:h-10 xl:h-12" />
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=Fpn1imb9qZg">
+            <div class="relative rounded-lg overflow-hidden">
+              <video class="w-full h-auto" autoplay muted loop preload="auto">
+                <source src="https://media.insaristocrate.fr/insaristocrate-rap.mp4" type="video/mp4">
+              </video>
+              <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
+                <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
+                  Rap d'inté
+                </div>
+                <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
+                  <ChevronDoubleRightIcon class="block h-8 md:h-10 xl:h-12" />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
 
 <!--    FOOTER -->
-    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+    <footer class="rounded-lg shadow m-4 bg-zinc-800">
       <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-400 sm:text-center dark:text-gray-400">Version n°{{buildId}}
+      <span class="text-sm text-gray-400 sm:text-center dark:text-gray-400">INS'Aristocrate 2024 - version n°{{buildId}}
     </span>
         <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 dark:text-gray-400 sm:mt-0">
           <li>
-            <a href="#" class="hover:underline me-4 md:me-6">About</a>
-          </li>
-          <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            <a href="#" class="hover:underline me-4 md:me-6">Crédits</a>
           </li>
           <li>
             <a href="#" class="hover:underline">Contact</a>
@@ -104,7 +125,7 @@
 
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
-import { BellIcon, Bars4Icon, XMarkIcon } from '@heroicons/vue/24/outline';
+import { ChevronDoubleRightIcon, Bars4Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 import { getAppManifest } from 'nuxt/app';
 
 const buildId = useAppConfig().nuxt?.buildId
