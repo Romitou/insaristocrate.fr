@@ -8,7 +8,9 @@ export default <Partial<Config>>{
     extend: {
       colors: {
         'red-logo': '#660806',
-        'purple-logo': '#49307a'
+        'red-second': '#901716',
+        'purple-logo': '#49307a',
+        'purple-second': '#533c90'
       },
       fontFamily: {
         'della': ['Della Respira', 'sans-serif']
