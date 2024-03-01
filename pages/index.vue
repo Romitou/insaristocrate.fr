@@ -36,8 +36,8 @@
     </div>
 
   </div>
-  <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-6 space-y-3 sm:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
-    <div class="flex flex-col w-full sm:w-1/5 bg-purple-logo rounded-lg  overflow-hidden">
+  <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
+    <div class="flex flex-col w-full lg:w-1/5 bg-purple-logo rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center items-center p-5">
         <h1 class="flex text-2xl xl:text-3xl font-della text-white">
           Nos événements
@@ -49,7 +49,7 @@
               <CalendarDaysIcon class="h-8" />
               <time :datetime="day" class="capitalize ml-2">{{new Date(day).toLocaleString('fr-FR', { dateStyle: 'full' })}}</time>
             </h2>
-            <li v-for="event in eventDay" class="group flex items-center space-x-4 rounded-xl py-2 px-4">
+            <li v-for="event in eventDay" class="group flex items-center space-x-4 rounded-xl py-2">
               <img :src="`https://media.insaristocrate.fr/events/${event.id}.jpg`" alt="" class="h-12 w-12 flex-none rounded-full" />
               <div class="flex-auto">
                 <p class="text-white font-della">{{ event.name }}</p>
@@ -66,17 +66,21 @@
           </template>
         </ol>
       </div>
-      <a href="#" class="flex items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-violet-600 hover:to-indigo-600 from-violet-700 to-indigo-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
+      <NuxtLink to="/events" class="flex items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-violet-600 hover:to-indigo-600 from-violet-700 to-indigo-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
         <div class="text-2xl font-della">
           Tous nos événements
         </div>
         <div>
           <ChevronDoubleRightIcon class="block h-8" />
         </div>
-      </a>
+      </NuxtLink>
     </div>
-    <div class="flex w-4/5 bg-green-500">
-      test
+    <div class="flex flex-col w-full lg:w-4/5 bg-zinc-800 rounded-lg overflow-hidden">
+      <div class="flex flex-col justify-center items-center p-5">
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
+          A venir
+        </h1>
+      </div>
     </div>
   </div>
 </template>
