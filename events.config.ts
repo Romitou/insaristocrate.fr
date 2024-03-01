@@ -1,5 +1,5 @@
 const foodSale = {
-  name: 'Vente de nourriture',
+  name: 'Stand nourriture',
   content: 'A definir'
 }
 
