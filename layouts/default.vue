@@ -31,9 +31,9 @@
         </div>
       </div>
     </div>
-    <div class="flex-grow bg-zinc-900">
+    <main class="flex-grow bg-zinc-900">
       <slot />
-    </div>
+    </main>
 
     <div class="bg-zinc-900">
       <footer class="rounded-lg shadow m-3 sm:m-4 lg:m-5 xl:m-6 bg-zinc-800">
