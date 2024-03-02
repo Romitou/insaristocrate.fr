@@ -34,84 +34,85 @@ const chasseACours = {
   content: 'A definir'
 }
 
-export const events = [
-  {
-    day: '2024-03-11',
-    events: [
-      {
-        id: 'rap',
-        start: '08:00',
-        name: 'Sortie Teaser',
-        content: 'A definir'
-      },
-      ...defaultBreak,
-      chasseACours,
-      {
-        id: 'rap',
-        start: '20:00',
-        name: 'Sortie Clip',
-        content: 'A definir'
-      },
-    ]
-  },
-  {
-    day: '2024-03-12',
-    events: [
-      ...defaultBreak,
-      chasseACours,
-      {
-        id: 'baf',
-        start: '19:30',
-        end: '23:00',
-        name: 'BAF',
-        content: 'A definir'
-      }
-    ]
-  },
-  {
-    day: '2024-03-13',
-    events: [
-      ...defaultBreak,
-      chasseACours,
-      {
-        id: 'bal',
-        start: '19:30',
-        end: '23:00',
-        name: 'Bal Masqué',
-        content: 'A definir'
-      },
-    ]
-  },
-  {
-    day: '2024-03-14',
-    events: [
-      ...defaultBreak,
-      {
-        id: 'tms',
-        start: '15:45',
-        end: '19:00',
-        name: 'TMS',
-        content: 'A definir'
-      },
-      {
-        id: 'bar',
-        start: '20:30',
-        end: '23:45',
-        name: 'Soirée bar',
-        content: 'A definir'
-      }
-    ]
-  }
-]
+export const events = [];
+
+// export const events = [
+//   {
+//     day: '2024-03-11',
+//     events: [
+//       {
+//         id: 'rap',
+//         start: '08:00',
+//         name: 'Sortie Teaser',
+//         content: 'A definir'
+//       },
+//       ...defaultBreak,
+//       chasseACours,
+//       {
+//         id: 'rap',
+//         start: '20:00',
+//         name: 'Sortie Clip',
+//         content: 'A definir'
+//       },
+//     ]
+//   },
+//   {
+//     day: '2024-03-12',
+//     events: [
+//       ...defaultBreak,
+//       chasseACours,
+//       {
+//         id: 'baf',
+//         start: '19:30',
+//         end: '23:00',
+//         name: 'BAF',
+//         content: 'A definir'
+//       }
+//     ]
+//   },
+//   {
+//     day: '2024-03-13',
+//     events: [
+//       ...defaultBreak,
+//       chasseACours,
+//       {
+//         id: 'bal',
+//         start: '19:30',
+//         end: '23:00',
+//         name: 'Bal Masqué',
+//         content: 'A definir'
+//       },
+//     ]
+//   },
+//   {
+//     day: '2024-03-14',
+//     events: [
+//       ...defaultBreak,
+//       {
+//         id: 'tms',
+//         start: '15:45',
+//         end: '19:00',
+//         name: 'TMS',
+//         content: 'A definir'
+//       },
+//       {
+//         id: 'bar',
+//         start: '20:30',
+//         end: '23:45',
+//         name: 'Soirée bar',
+//         content: 'A definir'
+//       }
+//     ]
+//   }
+// ]
 
 export const videos = [
   {
     id: 'teaser',
     name: 'Teaser',
     cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
-    youtube: 'https://www.youtube.com/watch?v=Fpn1imb9qZg',
-    showDate: 1709374967000
-    // showDate: 1710140400000
+    youtube: '',
+    showDate: 1710140400000
   },
   {
     id: 'clip',
