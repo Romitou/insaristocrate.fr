@@ -26,22 +26,30 @@ const defaultBreak = [morningBreak, mealBreak, endBreak].map(breakPeriod => {
   }
 })
 
+const chasseACours = {
+  id: 'chasse',
+  start: '14:00',
+  end: '14:45',
+  name: 'Chasse à cours',
+  content: 'A definir'
+}
+
 export const events = [
   {
     day: '2024-03-11',
     events: [
       {
         id: 'rap',
-        start: '00:15',
-        name: 'Sortie Rap et Teaser',
+        start: '08:00',
+        name: 'Sortie Teaser',
         content: 'A definir'
       },
       ...defaultBreak,
+      chasseACours,
       {
-        id: 'bal',
-        start: '19:30',
-        end: '23:00',
-        name: 'Bal Masqué',
+        id: 'rap',
+        start: '20:00',
+        name: 'Sortie Clip',
         content: 'A definir'
       },
     ]
@@ -50,6 +58,7 @@ export const events = [
     day: '2024-03-12',
     events: [
       ...defaultBreak,
+      chasseACours,
       {
         id: 'baf',
         start: '19:30',
@@ -63,13 +72,14 @@ export const events = [
     day: '2024-03-13',
     events: [
       ...defaultBreak,
+      chasseACours,
       {
-        id: 'chasse',
-        start: '14:00',
-        end: '14:45',
-        name: 'Chasse à cours',
+        id: 'bal',
+        start: '19:30',
+        end: '23:00',
+        name: 'Bal Masqué',
         content: 'A definir'
-      }
+      },
     ]
   },
   {
@@ -78,15 +88,15 @@ export const events = [
       ...defaultBreak,
       {
         id: 'tms',
-        start: '14:30',
-        end: '17:30',
+        start: '15:45',
+        end: '19:00',
         name: 'TMS',
         content: 'A definir'
       },
       {
         id: 'bar',
         start: '20:30',
-        end: '23:00',
+        end: '23:45',
         name: 'Soirée bar',
         content: 'A definir'
       }
