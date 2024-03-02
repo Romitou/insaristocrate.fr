@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
   css: ['assets/styles/font.css'],
   site: {
+    name: 'insaristocrate.fr',
     url: 'https://insaristocrate.fr',
   },
   sitemap: {
