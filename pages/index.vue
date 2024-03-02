@@ -29,7 +29,7 @@
     <div class="flex flex-col w-full lg:w-1/5 bg-purple-logo rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center items-center p-5">
         <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          Nos événements
+          Prochains événements
         </h1>
         <img class="w-2/3 mt-1" src="~/assets/underline.png">
         <ol class="w-full">
@@ -77,6 +77,23 @@
 <script setup lang="ts">
 import { ChevronDoubleRightIcon, CalendarDaysIcon, ClockIcon } from '@heroicons/vue/24/outline';
 import VueCountdown from '@chenfengyuan/vue-countdown';
+import { useHead, useSeoMeta } from 'unhead';
+
+useHead({
+  title: 'Accueil | INS\'Aristocrate 2024',
+  meta: [
+    { name: 'description', content: 'Bienvenue sur le site de la liste INS\'Aristocrate, candidate pour l\'intégration des premières années à l\'INSA Rouen Normandie. Découvrez nos vidéos, nos événements et toutes nos actualités.' }
+  ],
+})
+
+useSeoMeta({
+  title: 'Accueil | INS\'Aristocrate 2024',
+  ogTitle: 'Accueil | INS\'Aristocrate 2024',
+  description: 'Bienvenue sur le site de la liste INS\'Aristocrate, candidate pour l\'intégration des premières années à l\'INSA Rouen Normandie. Découvrez nos vidéos, nos événements et toutes nos actualités.',
+  ogDescription: 'Bienvenue sur le site de la liste INS\'Aristocrate, candidate pour l\'intégration des premières années à l\'INSA Rouen Normandie. Découvrez nos vidéos, nos événements et toutes nos actualités.',
+  ogImage: 'https://insaristocrate.fr/insaristocrate-banner.jpg',
+  twitterCard: 'summary_large_image',
+})
 
 const { data: videos, refresh: refreshVideos } = await useFetch('/api/videos');
 const { data: events } = await useFetch('/api/events');
