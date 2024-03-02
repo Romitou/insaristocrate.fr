@@ -8,13 +8,13 @@ export default defineEventHandler(async (event) => {
 
       const startDate = new Date(eventDay.day);
       const startSplit = eventObject.start.split(':');
-      startDate.setHours(parseInt(startSplit[0]), parseInt(startSplit[1]));
+      startDate.setHours(parseInt(startSplit[0])-1, parseInt(startSplit[1]));
 
       let endDate = null;
       if (eventObject.end) {
         endDate = new Date(eventDay.day);
         const endSplit = eventObject.end.split(':');
-        endDate.setHours(parseInt(endSplit[0]), parseInt(endSplit[1]));
+        endDate.setHours(parseInt(endSplit[0])-1, parseInt(endSplit[1]));
       }
 
       const newEvent = {
