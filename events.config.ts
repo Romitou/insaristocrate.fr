@@ -103,3 +103,21 @@ export const events = [
     ]
   }
 ]
+
+export const videos = [
+  {
+    id: 'teaser',
+    name: 'Teaser',
+    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
+    youtube: 'https://www.youtube.com/watch?v=Fpn1imb9qZg',
+    showDate: 1709374967000
+    // showDate: 1710140400000
+  },
+  {
+    id: 'clip',
+    name: 'Rap d\'inté',
+    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
+    youtube: '',
+    showDate: 1710183600000,
+  }
+]
