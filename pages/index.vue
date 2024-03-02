@@ -1,40 +1,29 @@
 <template>
   <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-6 space-y-3 sm:space-y-0 p-3 sm:p-4 lg:p-5 xl:p-6">
-    <div>
-      <a href="https://www.youtube.com/watch?v=Fpn1imb9qZg">
+    <div v-for="video in videos">
+      <a :href="video.youtube">
         <div class="relative rounded-lg overflow-hidden">
-          <video class="w-full h-auto" autoplay muted loop preload="auto">
-            <source src="https://media.insaristocrate.fr/insaristocrate-rap.mp4" type="video/mp4">
+          <video :key="video.cdnLink" class="w-full h-auto" autoplay muted loop preload="auto">
+            <source :src="video.cdnLink" type="video/mp4">
           </video>
           <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5 backdrop-blur-xl">
             <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
-              Teaser
+              {{ video.name }}
             </div>
-            <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
+            <div v-if="video.youtube" class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
               <ChevronDoubleRightIcon class="block h-8 md:h-10 xl:h-12" />
+            </div>
+            <div v-else>
+              <ClientOnly>
+                <VueCountdown @end="countdownEnd()" class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-della" :time="video.showDate - Date.now()" v-slot="{ days, hours, minutes, seconds }">
+                  {{ days }}j:{{ hours }}h:{{ minutes }}min:{{ seconds }}s
+                </VueCountdown>
+              </ClientOnly>
             </div>
           </div>
         </div>
       </a>
     </div>
-    <div>
-      <a href="https://www.youtube.com/watch?v=Fpn1imb9qZg">
-        <div class="relative rounded-lg overflow-hidden">
-          <video class="w-full h-auto" autoplay muted loop preload="auto">
-            <source src="https://media.insaristocrate.fr/insaristocrate-rap.mp4" type="video/mp4">
-          </video>
-          <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5 backdrop-blur-xl">
-            <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
-              Rap d'inté
-            </div>
-            <div class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-della">
-              <ChevronDoubleRightIcon class="block h-8 md:h-10 xl:h-12" />
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
   </div>
   <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
     <div class="flex flex-col w-full lg:w-1/5 bg-purple-logo rounded-lg overflow-hidden">
@@ -87,7 +76,9 @@
 
 <script setup lang="ts">
 import { ChevronDoubleRightIcon, CalendarDaysIcon, ClockIcon } from '@heroicons/vue/24/outline';
+import VueCountdown from '@chenfengyuan/vue-countdown';
 
+const { data: videos, refresh: refreshVideos } = await useFetch('/api/videos');
 const { data: events } = await useFetch('/api/events');
 
 const upcomingEvents = () => {
@@ -107,5 +98,10 @@ const upcomingEvents = () => {
     }
   }
   return upcomingEvents;
+}
+
+const countdownEnd = async () => {
+  await refreshVideos();
+  console.log('Videos refreshed');
 }
 </script>
