@@ -37,15 +37,15 @@ import { useHead, useSeoMeta } from 'unhead';
 useHead({
   title: 'Événements | INS\'Aristocrate 2024',
   meta: [
-    { name: 'description', content: 'Consultez toutes les informations relatives organisées par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !' }
+    { name: 'description', content: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !' }
   ],
 })
 
 useSeoMeta({
   title: 'Événements | INS\'Aristocrate 2024',
   ogTitle: 'Événements | INS\'Aristocrate 2024',
-  description: 'Consultez toutes les informations relatives organisées par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
-  ogDescription: 'Consultez toutes les informations relatives organisées par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
+  description: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
+  ogDescription: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
   ogImage: 'https://insaristocrate.fr/insaristocrate-banner.jpg',
   twitterCard: 'summary_large_image',
 })
