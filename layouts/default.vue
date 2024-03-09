@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-screen bg-zinc-900">
-    <div as="nav" class="bg-gradient-to-r from-red-logo to-red-second shadow">
+    <nav class="bg-gradient-to-r from-red-logo to-red-second shadow">
       <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex justify-between h-16">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -20,6 +20,7 @@
             <div class="hidden sm:ml-10 sm:flex sm:space-x-8">
               <NuxtLink to="/" :class="getDesktopClass('index')">Accueil</NuxtLink>
               <NuxtLink to="/events" :class="getDesktopClass('events')">Événements</NuxtLink>
+              <NuxtLink to="/news" :class="getDesktopClass('news')">Actualités</NuxtLink>
             </div>
           </div>
         </div>
@@ -28,9 +29,10 @@
         <div class="pt-2 pb-4 space-y-1">
           <NuxtLink to="/" :class="getMobileClass('index')">Accueil</NuxtLink>
           <NuxtLink to="/events" :class="getMobileClass('events')">Événements</NuxtLink>
+          <NuxtLink to="/news" :class="getMobileClass('news')">Actualités</NuxtLink>
         </div>
       </div>
-    </div>
+    </nav>
     <main class="flex-grow bg-zinc-900">
       <slot />
     </main>
