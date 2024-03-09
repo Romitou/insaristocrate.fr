@@ -11,7 +11,9 @@
               <img class="h-6 w-6 mr-2" src="~/assets/fleur-lys.png">
               {{ post.title }}
             </h1>
+            <NuxtClientFallback>
             <p v-html="post.content" class="mt-3 text-base text-gray-300" />
+            </NuxtClientFallback>
             <div class="mt-6 flex items-center">
               <div class="flex space-x-1 text-sm text-gray-400">
                 <time :datetime="post.createdAt">

@@ -73,16 +73,17 @@
     </div>
     <div class="flex flex-col w-full lg:w-3/5">
       <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          Dernière actualité
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-if="latestPost()">
+          {{ latestPost().title }}
+        </h1>
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-else>
+          Aucune actualité :(
         </h1>
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
         <div class="w-full mt-3 justify-start" v-if="latestPost()">
-          <h1 class="flex text-xl font-semibold text-gray-100 items-center">
-            <img class="h-6 w-6 mr-2" src="~/assets/fleur-lys.png">
-            {{ latestPost().title }}
-          </h1>
-          <p v-html="latestPost().content" class="mt-3 text-base text-gray-300" />
+          <NuxtClientFallback>
+            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300" />
+          </NuxtClientFallback>
           <div class="mt-6 flex items-center">
             <div class="flex space-x-1 text-sm text-gray-400">
               <time :datetime="latestPost().createdAt">
