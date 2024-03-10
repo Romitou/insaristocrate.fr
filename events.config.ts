@@ -42,9 +42,9 @@ export const events = [
     events: [
       {
         id: 'campagne',
-        start: '08:00',
+        start: '11:15',
         name: 'Sortie vidéo de campagne',
-        content: 'Rendez-vous le lundi 11 mars à 08h00 précises sur notre site afin de découvrir la vidéo de campagne INS\'Aristocrate !'
+        content: 'Rendez-vous le lundi 11 mars à 11h15 précises sur notre site afin de découvrir la vidéo de campagne INS\'Aristocrate !'
       },
       ...defaultBreak,
       chasseACourre,
