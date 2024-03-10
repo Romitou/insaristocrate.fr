@@ -2,7 +2,7 @@ const moreInfoToCome = 'Plus d\'informations concernant cet événement sont à 
 
 const foodSale = {
   name: 'Stand nourriture',
-  content: moreInfoToCome // UNDEFINED
+  content: 'Rendez-vous dans le hall Magélan où vous trouverez de quoi vous requinquer entre les cours grâce à de merveilleuses crêpes et autres mets !' // UNDEFINED
 }
 
 const morningBreak = {
@@ -116,15 +116,15 @@ export const videos = [
   {
     id: 'videoCampagne',
     name: 'Vidéo de campagne',
-    cdnLink: '',
-    youtube: '',
-    showDate: 1710140400000
+    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-campagne-1080.mp4',
+    youtube: 'https://youtu.be/cZfprKDNtIE',
+    showDate: 1710152100000
   },
   {
     id: 'clip',
     name: 'Rap d\'inté',
-    cdnLink: '',
-    youtube: '',
+    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap-1080.mp4',
+    youtube: 'https://youtu.be/cMXRHP2fr3Q',
     showDate: 1710183600000,
   }
 ]

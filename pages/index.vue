@@ -28,7 +28,7 @@
   <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
     <div class="flex flex-col w-full lg:w-2/5 rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center bg-purple-logo items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center">
           Nos prochains événements
         </h1>
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
@@ -66,10 +66,10 @@
     </div>
     <div class="flex flex-col w-full lg:w-3/5">
       <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-if="latestPost()">
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-if="latestPost()">
           {{ latestPost().title }}
         </h1>
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-else>
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-else>
           Aucune actualité :(
         </h1>
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
