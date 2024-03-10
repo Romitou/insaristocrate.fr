@@ -41,7 +41,7 @@ export const events = [
       {
         id: 'rap',
         start: '08:00',
-        name: 'Sortie Teaser',
+        name: 'Sortie vidéo de campagne',
         content: 'A definir'
       },
       ...defaultBreak,
@@ -106,10 +106,10 @@ export const events = [
 
 export const videos = [
   {
-    id: 'teaser',
-    name: 'Teaser',
+    id: 'videoCampagne',
+    name: 'Vidéo de campagne',
     cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
-    youtube: '',
+    youtube: 'https://www.youtube.com/watch?v=Fpn1imb9qZg',
     showDate: 0,
     // showDate: 1710140400000
   },
