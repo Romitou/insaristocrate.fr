@@ -26,6 +26,37 @@
     </div>
   </div>
   <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
+    <div class="flex flex-col w-full lg:w-3/5">
+      <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-if="latestPost()">
+          {{ latestPost().title }}
+        </h1>
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-else>
+          Aucune actualité :(
+        </h1>
+        <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
+        <div class="w-full mt-3 justify-start" v-if="latestPost()">
+          <ClientOnly>
+            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300 font-della" />
+          </ClientOnly>
+          <div class="mt-6 flex items-center">
+            <div class="flex space-x-1 text-sm text-gray-400 font-della">
+              <time :datetime="latestPost().createdAt">
+                Publié le {{ new Date(latestPost().createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
+              </time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <NuxtLink to="/news" class="flex rounded-b-lg items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-zinc-600 hover:to-gray-600 from-zinc-700 to-gray-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
+        <div class="text-2xl font-della">
+          Toutes nos actualités
+        </div>
+        <div>
+          <ChevronDoubleRightIcon class="block h-8" />
+        </div>
+      </NuxtLink>
+    </div>
     <div class="flex flex-col w-full lg:w-2/5 rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center bg-purple-logo items-center p-5 rounded-t-lg">
         <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center">
@@ -58,37 +89,6 @@
       <NuxtLink to="/events" class="flex rounded-b-lg items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-violet-600 hover:to-indigo-600 from-violet-700 to-indigo-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
         <div class="text-2xl font-della">
           Tous nos événements
-        </div>
-        <div>
-          <ChevronDoubleRightIcon class="block h-8" />
-        </div>
-      </NuxtLink>
-    </div>
-    <div class="flex flex-col w-full lg:w-3/5">
-      <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-if="latestPost()">
-          {{ latestPost().title }}
-        </h1>
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-else>
-          Aucune actualité :(
-        </h1>
-        <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
-        <div class="w-full mt-3 justify-start" v-if="latestPost()">
-          <ClientOnly>
-            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300 font-della" />
-          </ClientOnly>
-          <div class="mt-6 flex items-center">
-            <div class="flex space-x-1 text-sm text-gray-400 font-della">
-              <time :datetime="latestPost().createdAt">
-                Publié le {{ new Date(latestPost().createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
-              </time>
-            </div>
-          </div>
-        </div>
-      </div>
-      <NuxtLink to="/news" class="flex rounded-b-lg items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-zinc-600 hover:to-gray-600 from-zinc-700 to-gray-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
-        <div class="text-2xl font-della">
-          Toutes nos actualités
         </div>
         <div>
           <ChevronDoubleRightIcon class="block h-8" />
