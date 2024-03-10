@@ -33,7 +33,7 @@ const chasseACourre = {
   start: '14:00',
   end: '14:45',
   name: 'Chasse à courre',
-  content: 'Participez à la grande chasse à cour royale ! Suivez les indices et trouvez l’aristocrate à tête de sanglier qui se cache dans l’INSA pour remporter un super cadeau !'
+  content: 'Participez à la grande chasse à courre royale ! Suivez les indices et trouvez l’aristocrate à tête de cerf qui se cache dans l’INSA pour remporter un super cadeau !'
 }
 
 export const events = [
@@ -41,7 +41,7 @@ export const events = [
     day: '2024-03-11',
     events: [
       {
-        id: 'rap',
+        id: 'campagne',
         start: '08:00',
         name: 'Sortie vidéo de campagne',
         content: 'Rendez-vous le lundi 11 mars à 08h00 précises sur notre site afin de découvrir la vidéo de campagne INS\'Aristocrate !'
@@ -52,7 +52,7 @@ export const events = [
         id: 'rap',
         start: '20:00',
         name: 'Sortie clip',
-        content: 'Rendez-vous le lundi 11 mars à 08h00 précises sur notre site afin de découvrir le clip INS\'Aristocrate !'
+        content: 'Rendez-vous le lundi 11 mars à 20h00 précises sur notre site afin de découvrir le clip INS\'Aristocrate !'
       },
       {
         id: 'ouverture',
@@ -86,7 +86,7 @@ export const events = [
         start: '19:30',
         end: '23:00',
         name: 'Bal Masqué',
-        content: 'Venez profiter d\'une petite soirée (au foyer du Mad de 20h à 23h) commune aux 2 inté, dans la joie et la bonne humeur. Plusieurs petites activités préparé par les 2 inté sont au programme pour vous garantir une bonne soirée. De plus vous aurez l\'occasion de déguster des mets préparés avec soin par les 2 inté. On vous attend avec vos plus beaux déguisements !'
+        content: 'Venez profiter d\'une petite soirée (au foyer du Madrillet de 20h à 23h) commune aux 2 intés, dans la joie et la bonne humeur. Plusieurs petites activités préparées par les 2 intés sont au programme pour vous garantir une bonne soirée. De plus, vous aurez l\'occasion de déguster des mets préparés avec soin par les 2 intés. On vous attend avec vos plus beaux déguisements !'
       },
     ]
   },

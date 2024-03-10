@@ -29,7 +29,7 @@
     <div class="flex flex-col w-full lg:w-2/5 rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center bg-purple-logo items-center p-5 rounded-t-lg">
         <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          Prochains événements
+          Nos prochains événements
         </h1>
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
         <ol class="w-full">
