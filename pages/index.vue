@@ -82,10 +82,10 @@
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
         <div class="w-full mt-3 justify-start" v-if="latestPost()">
           <ClientOnly>
-            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300" />
+            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300 font-della" />
           </ClientOnly>
           <div class="mt-6 flex items-center">
-            <div class="flex space-x-1 text-sm text-gray-400">
+            <div class="flex space-x-1 text-sm text-gray-400 font-della">
               <time :datetime="latestPost().createdAt">
                 Publié le {{ new Date(latestPost().createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
               </time>
