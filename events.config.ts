@@ -2,7 +2,7 @@ const moreInfoToCome = 'Plus d\'informations concernant cet événement sont à 
 
 const foodSale = {
   name: 'Stand nourriture',
-  content: 'Rendez-vous dans le hall Magélan où vous trouverez de quoi vous requinquer entre les cours grâce à de merveilleuses crêpes et autres mets !' // UNDEFINED
+  content: 'Rendez-vous dans le hall Magellan où vous trouverez de quoi vous requinquer entre les cours grâce à de merveilleuses crêpes et autres mets !' // UNDEFINED
 }
 
 const morningBreak = {
