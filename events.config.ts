@@ -26,12 +26,12 @@ const defaultBreak = [morningBreak, mealBreak, endBreak].map(breakPeriod => {
   }
 })
 
-const chasseACours = {
+const chasseACourre = {
   id: 'chasse',
   start: '14:00',
   end: '14:45',
-  name: 'Chasse à cours',
-  content: 'A definir'
+  name: 'Chasse à courre',
+  content: 'Participez à la grande chasse à cour royale ! Suivez les indices et trouvez l’aristocrate à tête de sanglier qui se cache dans l’INSA pour remporter un super cadeau !'
 }
 
 export const events = [
@@ -41,24 +41,30 @@ export const events = [
       {
         id: 'rap',
         start: '08:00',
-        name: 'Sortie Teaser',
+        name: 'Sortie vidéo de campagne',
         content: 'A definir'
       },
       ...defaultBreak,
-      chasseACours,
+      chasseACourre,
       {
         id: 'rap',
         start: '20:00',
         name: 'Sortie Clip',
         content: 'A definir'
       },
+      {
+        id: 'ouverture',
+        start: '19:30',
+        name: 'Soirée d\'ouverture',
+        content: 'Venez profiter d\'un petite soirée d\'ouverture (de 19h30 à 22h30 au foyer du Mad) en petit comité en guise de mise en bouche pour cette semaine de campagne pleine d\'activités de qualité. Au programme de cette soirée : Mario kart, création de masques pour le bal de mercredi soir, piano et initiation à la danse Rock.'
+      }
     ]
   },
   {
     day: '2024-03-12',
     events: [
       ...defaultBreak,
-      chasseACours,
+      chasseACourre,
       {
         id: 'baf',
         start: '19:30',
@@ -72,13 +78,13 @@ export const events = [
     day: '2024-03-13',
     events: [
       ...defaultBreak,
-      chasseACours,
+      chasseACourre,
       {
         id: 'bal',
         start: '19:30',
         end: '23:00',
         name: 'Bal Masqué',
-        content: 'A definir'
+        content: 'Venez profiter d\'une petite soirée (au foyer du Mad de 20h à 23h) commune aux 2 inté, dans la joie et la bonne humeur. Plusieurs petites activités préparé par les 2 inté sont au programme pour vous garantir une bonne soirée. De plus vous aurez l\'occasion de déguster des mets préparés avec soin par les 2 inté. On vous attend avec vos plus beaux déguisements !'
       },
     ]
   },
@@ -106,10 +112,10 @@ export const events = [
 
 export const videos = [
   {
-    id: 'teaser',
-    name: 'Teaser',
+    id: 'videoCampagne',
+    name: 'Vidéo de campagne',
     cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
-    youtube: '',
+    youtube: 'https://www.youtube.com/watch?v=Fpn1imb9qZg',
     showDate: 0,
     // showDate: 1710140400000
   },

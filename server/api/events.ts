@@ -22,6 +22,7 @@ export default defineEventHandler(async (event) => {
         day: eventDay.day,
         name: eventObject.name,
         start: startDate,
+        content: eventObject.content,
       }
       if (endDate) {
         newEvent['end'] = endDate;
