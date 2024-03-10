@@ -15,8 +15,8 @@
             </div>
             <div v-else>
               <ClientOnly>
-                <VueCountdown @end="countdownEnd()" class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-della" :time="video.showDate - Date.now()" v-slot="{ days, hours, minutes, seconds }">
-                  {{ days }}j:{{ hours }}h:{{ minutes }}min:{{ seconds }}s
+                <VueCountdown @end="countdownEnd()" class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-della flex flex-row items-center" :time="video.showDate - Date.now()" v-slot="{ days, hours, minutes, seconds }">
+                  <div v-if="days !== 0">{{ days }}j:</div><div v-if="hours !== 0">{{ hours }}h:</div><div v-if="minutes !== 0">{{ minutes }}min:</div>{{ seconds }}s
                 </VueCountdown>
               </ClientOnly>
             </div>
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
-    <div class="flex flex-col w-full lg:w-1/5 rounded-lg overflow-hidden">
+    <div class="flex flex-col w-full lg:w-2/5 rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center bg-purple-logo items-center p-5 rounded-t-lg">
         <h1 class="flex text-2xl xl:text-3xl font-della text-white">
           Prochains événements
@@ -63,13 +63,6 @@
           <ChevronDoubleRightIcon class="block h-8" />
         </div>
       </NuxtLink>
-    </div>
-    <div class="flex flex-col w-full lg:w-1/5 bg-zinc-800 rounded-lg overflow-hidden">
-      <div class="flex flex-col justify-center items-center p-5">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          A venir
-        </h1>
-      </div>
     </div>
     <div class="flex flex-col w-full lg:w-3/5">
       <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">

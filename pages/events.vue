@@ -19,7 +19,7 @@
             </h1>
             <img class="w-2/3 mt-1" src="~/assets/underline.png">
             <ol class="w-full">
-              <button @click="setEventId(event.id);" v-for="event in eventDay" class="group flex items-center space-x-4 rounded-xl py-2 px-4">
+              <button @click="setEventId(event.id);" v-for="event in eventDay" class="group flex items-center text-start space-x-4 rounded-xl py-2 px-4">
                 <img :src="`https://media.insaristocrate.fr/events/${event.id}.jpg`" alt="" class="h-12 w-12 flex-none rounded-full" />
                 <div class="flex-auto">
                   <p :class="`${event.id === 'food' ? 'text-gray-300' : 'text-white font-semibold'} font-della`">{{ event.name }}</p>
@@ -52,7 +52,7 @@
               <div class="bg-zinc-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <div class="sm:flex sm:items-start">
                   <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10">
-                    <img v-if="selectedEvent()" :src="`https://media.insaristocrate.fr/events/${selectedEventId}.jpg`" alt="" class="flex-none rounded-full" />
+                    <img v-if="selectedEvent()" :src="`https://media.insaristocrate.fr/events/${selectedEventId}.jpg`" alt="" class="h-12 w-12 flex-none rounded-full" />
                   </div>
                   <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                     <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-200" v-if="selectedEvent()">{{ selectedEvent().name }}</DialogTitle>
@@ -76,29 +76,26 @@
 <script setup lang="ts">
 import { useHead, useSeoMeta } from 'unhead';
 import { ClockIcon } from '@heroicons/vue/24/outline';
-import { Dialog, DialogDescription, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue';
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue';
 
+useHead({
+  title: 'Événements | INS\'Aristocrate 2024',
+  meta: [
+    { name: 'description', content: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !' }
+  ],
+})
 
-// useHead({
-//   title: 'Événements | INS\'Aristocrate 2024',
-//   meta: [
-//     { name: 'description', content: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !' }
-//   ],
-// })
-//
-// useSeoMeta({
-//   title: 'Événements | INS\'Aristocrate 2024',
-//   ogTitle: 'Événements | INS\'Aristocrate 2024',
-//   description: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
-//   ogDescription: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
-//   ogImage: 'https://insaristocrate.fr/insaristocrate-banner.jpg',
-//   twitterCard: 'summary_large_image',
-// })
+useSeoMeta({
+  title: 'Événements | INS\'Aristocrate 2024',
+  ogTitle: 'Événements | INS\'Aristocrate 2024',
+  description: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
+  ogDescription: 'Consultez toutes les informations relatives aux événements organisés par INS\'Aristocrate dans le cadre de notre campagne d\'intégration. Retrouvez toutes les dates et horaires clés pour venir vivre avec nous la meilleure semaine d\'intégration !',
+  ogImage: 'https://insaristocrate.fr/insaristocrate-banner.jpg',
+  twitterCard: 'summary_large_image',
+})
 
 const selectedEventId = ref(null);
-onMounted(() => {
-  console.log(selectedEventId);
-})
+
 const selectedEvent = () => {
   return events.value.find(e => e.id === selectedEventId.value);
 };

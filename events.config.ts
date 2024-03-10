@@ -1,6 +1,8 @@
+const moreInfoToCome = 'Plus d\'informations concernant cet événement sont à venir.'
+
 const foodSale = {
   name: 'Stand nourriture',
-  content: 'A definir'
+  content: moreInfoToCome // UNDEFINED
 }
 
 const morningBreak = {
@@ -42,15 +44,15 @@ export const events = [
         id: 'rap',
         start: '08:00',
         name: 'Sortie vidéo de campagne',
-        content: 'A definir'
+        content: 'Rendez-vous le lundi 11 mars à 08h00 précises sur notre site afin de découvrir la vidéo de campagne INS\'Aristocrate !'
       },
       ...defaultBreak,
       chasseACourre,
       {
         id: 'rap',
         start: '20:00',
-        name: 'Sortie Clip',
-        content: 'A definir'
+        name: 'Sortie clip',
+        content: 'Rendez-vous le lundi 11 mars à 08h00 précises sur notre site afin de découvrir le clip INS\'Aristocrate !'
       },
       {
         id: 'ouverture',
@@ -70,7 +72,7 @@ export const events = [
         start: '19:30',
         end: '23:00',
         name: 'BAF',
-        content: 'A definir'
+        content: moreInfoToCome // UNDEFINED
       }
     ]
   },
@@ -97,14 +99,14 @@ export const events = [
         start: '15:45',
         end: '19:00',
         name: 'TMS',
-        content: 'A definir'
+        content: moreInfoToCome // UNDEFINED
       },
       {
         id: 'bar',
         start: '20:30',
         end: '23:45',
         name: 'Soirée bar',
-        content: 'A definir'
+        content: moreInfoToCome // UNDEFINED
       }
     ]
   }
@@ -114,15 +116,14 @@ export const videos = [
   {
     id: 'videoCampagne',
     name: 'Vidéo de campagne',
-    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
-    youtube: 'https://www.youtube.com/watch?v=Fpn1imb9qZg',
-    showDate: 0,
-    // showDate: 1710140400000
+    cdnLink: '',
+    youtube: '',
+    showDate: 1710140400000
   },
   {
     id: 'clip',
     name: 'Rap d\'inté',
-    cdnLink: 'https://media.insaristocrate.fr/insaristocrate-rap.mp4',
+    cdnLink: '',
     youtube: '',
     showDate: 1710183600000,
   }
