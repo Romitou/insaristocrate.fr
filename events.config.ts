@@ -86,7 +86,7 @@ export const events = [
         id: 'bal',
         start: '20:00',
         end: '23:00',
-        name: 'Bal Masqué',
+        name: 'Soirée commune',
         content: 'Venez profiter d\'une petite soirée (au foyer du Madrillet de 20h à 23h) commune aux 2 intés, dans la joie et la bonne humeur. Plusieurs petites activités préparées par les 2 intés sont au programme pour vous garantir une bonne soirée. De plus, vous aurez l\'occasion de déguster des mets préparés avec soin par les 2 intés. On vous attend avec vos plus beaux déguisements !'
       },
     ]
