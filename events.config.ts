@@ -56,9 +56,9 @@ export const events = [
       },
       {
         id: 'ouverture',
-        start: '19:30',
+        start: '19:00',
         name: 'Soirée d\'ouverture',
-        content: 'Venez profiter d\'un petite soirée d\'ouverture (de 19h30 à 22h30 au foyer du Mad) en petit comité en guise de mise en bouche pour cette semaine de campagne pleine d\'activités de qualité. Au programme de cette soirée : Mario kart, création de masques pour le bal de mercredi soir, piano et initiation à la danse Rock.'
+        content: 'Venez profiter d\'un petite soirée d\'ouverture (de 19h00 à 22h30 au foyer du Mad) en petit comité en guise de mise en bouche pour cette semaine de campagne pleine d\'activités de qualité. Au programme de cette soirée : Mario kart, création de masques pour le bal de mercredi soir, piano et initiation à la danse Rock.'
       }
     ]
   },
@@ -83,7 +83,7 @@ export const events = [
       chasseACourre,
       {
         id: 'bal',
-        start: '19:30',
+        start: '20:00',
         end: '23:00',
         name: 'Bal Masqué',
         content: 'Venez profiter d\'une petite soirée (au foyer du Madrillet de 20h à 23h) commune aux 2 intés, dans la joie et la bonne humeur. Plusieurs petites activités préparées par les 2 intés sont au programme pour vous garantir une bonne soirée. De plus, vous aurez l\'occasion de déguster des mets préparés avec soin par les 2 intés. On vous attend avec vos plus beaux déguisements !'
@@ -93,11 +93,11 @@ export const events = [
   {
     day: '2024-03-14',
     events: [
-      ...defaultBreak,
+      ...defaultBreak.filter(br => br.start != '16:30'),
       {
         id: 'tms',
-        start: '15:45',
-        end: '19:00',
+        start: '16:00',
+        end: '18:45',
         name: 'TMS',
         content: moreInfoToCome // UNDEFINED
       },
