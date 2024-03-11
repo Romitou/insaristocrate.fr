@@ -1,4 +1,11 @@
 <template>
+  <div class="w-full items-center justify-center flex">
+    <div>
+      <ClientOnly>
+        <ConfettiExplosion :duration="5000" v-if="visible" />
+      </ClientOnly>
+    </div>
+  </div>
   <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-6 space-y-3 sm:space-y-0 p-3 sm:p-4 lg:p-5 xl:p-6">
     <div v-for="video in videos">
       <a :href="video.youtube">
@@ -99,9 +106,11 @@
 </template>
 
 <script setup lang="ts">
+import ConfettiExplosion from "vue-confetti-explosion";
 import { ChevronDoubleRightIcon, CalendarDaysIcon, ClockIcon } from '@heroicons/vue/24/outline';
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import { useHead, useSeoMeta } from 'unhead';
+import { nextTick } from 'vue';
 
 useHead({
   title: 'Accueil | INS\'Aristocrate 2024',
@@ -143,6 +152,7 @@ const upcomingEvents = () => {
 }
 
 const countdownEnd = async () => {
+  void explode();
   await refreshVideos();
 }
 
@@ -151,4 +161,11 @@ const latestPost = () => {
     return posts.value[0];
   return null;
 }
+
+const visible = ref(false);
+const explode = async () => {
+  visible.value = false;
+  await nextTick();
+  visible.value = true;
+};
 </script>
