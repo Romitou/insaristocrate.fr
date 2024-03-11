@@ -10,7 +10,7 @@
     <div v-for="video in videos">
       <a :href="video.youtube">
         <div class="relative rounded-lg overflow-hidden">
-          <video :key="video.cdnLink" class="w-full h-auto" autoplay muted loop preload="auto">
+          <video :key="video.cdnLink" class="w-full h-auto" autoplay muted loop preload="auto" playsinline>
             <source :src="video.cdnLink" type="video/mp4">
           </video>
           <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5 backdrop-blur-xl">
