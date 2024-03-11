@@ -7,15 +7,15 @@
             <img class="h-48 w-full object-cover" :src="post.imageUrl" alt="" />
           </div>
           <div class="flex bg-zinc-800 p-6 flex-col justify-between rounded-lg shadow-lg overflow-hidden">
-            <h1 class="flex text-xl font-semibold text-gray-100 items-center">
+            <h1 class="flex text-xl font-semibold text-gray-100 items-center font-della">
               <img class="h-6 w-6 mr-2" src="~/assets/fleur-lys.png">
               {{ post.title }}
             </h1>
             <ClientOnly>
-              <p v-html="post.content" class="mt-3 text-base text-gray-300" />
+              <p v-html="post.content" class="mt-3 text-base text-gray-300 font-della" />
             </ClientOnly>
             <div class="mt-6 flex items-center">
-              <div class="flex space-x-1 text-sm text-gray-400">
+              <div class="flex space-x-1 text-sm text-gray-400 font-della">
                 <time :datetime="post.createdAt">
                   Publié le {{ new Date(post.createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
                 </time>

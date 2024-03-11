@@ -1,9 +1,16 @@
 <template>
+  <div class="w-full items-center justify-center flex">
+    <div>
+      <ClientOnly>
+        <ConfettiExplosion :duration="5000" v-if="visible" />
+      </ClientOnly>
+    </div>
+  </div>
   <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-6 space-y-3 sm:space-y-0 p-3 sm:p-4 lg:p-5 xl:p-6">
     <div v-for="video in videos">
       <a :href="video.youtube">
         <div class="relative rounded-lg overflow-hidden">
-          <video :key="video.cdnLink" class="w-full h-auto" autoplay muted loop preload="auto">
+          <video :key="video.cdnLink" class="w-full h-auto" autoplay muted loop preload="auto" playsinline>
             <source :src="video.cdnLink" type="video/mp4">
           </video>
           <div class="flex items-center justify-between text-white absolute inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5 backdrop-blur-xl">
@@ -15,8 +22,8 @@
             </div>
             <div v-else>
               <ClientOnly>
-                <VueCountdown @end="countdownEnd()" class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-della" :time="video.showDate - Date.now()" v-slot="{ days, hours, minutes, seconds }">
-                  {{ days }}j:{{ hours }}h:{{ minutes }}min:{{ seconds }}s
+                <VueCountdown @end="countdownEnd()" class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-della flex flex-row items-center" :time="video.showDate - Date.now()" v-slot="{ days, hours, minutes, seconds }">
+                  <div v-if="days !== 0">{{ days }}j:</div><div v-if="hours !== 0">{{ hours }}h:</div><div v-if="minutes !== 0">{{ minutes }}min:</div>{{ seconds }}s
                 </VueCountdown>
               </ClientOnly>
             </div>
@@ -26,10 +33,41 @@
     </div>
   </div>
   <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-6 space-y-3 lg:space-y-0 px-3 sm:px-4 lg:px-5 xl:px-6">
-    <div class="flex flex-col w-full lg:w-1/5 rounded-lg overflow-hidden">
+    <div class="flex flex-col w-full lg:w-3/5">
+      <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-if="latestPost()">
+          {{ latestPost().title }}
+        </h1>
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center" v-else>
+          Aucune actualité :(
+        </h1>
+        <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
+        <div class="w-full mt-3 justify-start" v-if="latestPost()">
+          <ClientOnly>
+            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300 font-della" />
+          </ClientOnly>
+          <div class="mt-6 flex items-center">
+            <div class="flex space-x-1 text-sm text-gray-400 font-della">
+              <time :datetime="latestPost().createdAt">
+                Publié le {{ new Date(latestPost().createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
+              </time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <NuxtLink to="/news" class="flex rounded-b-lg items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-zinc-600 hover:to-gray-600 from-zinc-700 to-gray-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
+        <div class="text-2xl font-della">
+          Toutes nos actualités
+        </div>
+        <div>
+          <ChevronDoubleRightIcon class="block h-8" />
+        </div>
+      </NuxtLink>
+    </div>
+    <div class="flex flex-col w-full lg:w-2/5 rounded-lg overflow-hidden">
       <div class="flex flex-col justify-center bg-purple-logo items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          Prochains événements
+        <h1 class="flex text-2xl xl:text-3xl font-della text-white text-center">
+          Nos prochains événements
         </h1>
         <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
         <ol class="w-full">
@@ -64,51 +102,15 @@
         </div>
       </NuxtLink>
     </div>
-    <div class="flex flex-col w-full lg:w-1/5 bg-zinc-800 rounded-lg overflow-hidden">
-      <div class="flex flex-col justify-center items-center p-5">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white">
-          A venir
-        </h1>
-      </div>
-    </div>
-    <div class="flex flex-col w-full lg:w-3/5">
-      <div class="flex flex-col justify-center bg-zinc-800 items-center p-5 rounded-t-lg">
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-if="latestPost()">
-          {{ latestPost().title }}
-        </h1>
-        <h1 class="flex text-2xl xl:text-3xl font-della text-white" v-else>
-          Aucune actualité :(
-        </h1>
-        <img class="w-2/3 max-w-xs mt-1" src="~/assets/underline.png">
-        <div class="w-full mt-3 justify-start" v-if="latestPost()">
-          <ClientOnly>
-            <p v-html="latestPost().content" class="mt-3 text-base text-gray-300" />
-          </ClientOnly>
-          <div class="mt-6 flex items-center">
-            <div class="flex space-x-1 text-sm text-gray-400">
-              <time :datetime="latestPost().createdAt">
-                Publié le {{ new Date(latestPost().createdAt).toLocaleString('fr-FR', { dateStyle: 'full' }) }}
-              </time>
-            </div>
-          </div>
-        </div>
-      </div>
-      <NuxtLink to="/news" class="flex rounded-b-lg items-center justify-between text-white bg-gradient-to-r hover:bg-gradient-to-l hover:from-zinc-600 hover:to-gray-600 from-zinc-700 to-gray-700 inset-x-0 bottom-0 px-3 py-3 sm:px-5 sm:py-5">
-        <div class="text-2xl font-della">
-          Toutes nos actualités
-        </div>
-        <div>
-          <ChevronDoubleRightIcon class="block h-8" />
-        </div>
-      </NuxtLink>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import ConfettiExplosion from "vue-confetti-explosion";
 import { ChevronDoubleRightIcon, CalendarDaysIcon, ClockIcon } from '@heroicons/vue/24/outline';
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import { useHead, useSeoMeta } from 'unhead';
+import { nextTick } from 'vue';
 
 useHead({
   title: 'Accueil | INS\'Aristocrate 2024',
@@ -134,6 +136,9 @@ const upcomingEvents = () => {
   let upcomingEvents = [];
   let i = 0;
   for (const event of events.value) {
+    if (!event.end && Date.now() > Date.parse(event.start) + 3600000) {
+      continue;
+    }
     if (Date.now() > Date.parse(event.end)) {
       continue;
     }
@@ -150,6 +155,7 @@ const upcomingEvents = () => {
 }
 
 const countdownEnd = async () => {
+  void explode();
   await refreshVideos();
 }
 
@@ -158,4 +164,11 @@ const latestPost = () => {
     return posts.value[0];
   return null;
 }
+
+const visible = ref(false);
+const explode = async () => {
+  visible.value = false;
+  await nextTick();
+  visible.value = true;
+};
 </script>
