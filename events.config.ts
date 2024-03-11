@@ -2,7 +2,7 @@ const moreInfoToCome = 'Plus d\'informations concernant cet événement sont à 
 
 const foodSale = {
   name: 'Stand nourriture',
-  content: 'Rendez-vous dans le hall Magellan où vous trouverez de quoi vous requinquer entre les cours grâce à de merveilleuses crêpes et autres mets !' // UNDEFINED
+  content: 'Vous êtes conviés à nous rejoindre à chaque pause devant l\'arche orange pour déguster tous les mets préparés par nos aristos préférés !' // UNDEFINED
 }
 
 const morningBreak = {
@@ -31,7 +31,7 @@ const defaultBreak = [morningBreak, mealBreak, endBreak].map(breakPeriod => {
 const chasseACourre = {
   id: 'chasse',
   start: '14:00',
-  end: '14:45',
+  end: '15:00',
   name: 'Chasse à courre',
   content: 'Participez à la grande chasse à courre royale ! Suivez les indices et trouvez l’aristocrate à tête de cerf qui se cache dans l’INSA pour remporter un super cadeau !'
 }
