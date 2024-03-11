@@ -56,9 +56,10 @@ export const events = [
       },
       {
         id: 'ouverture',
-        start: '19:00',
+        start: '19:30',
+        end: '22:30',
         name: 'Soirée d\'ouverture',
-        content: 'Venez profiter d\'un petite soirée d\'ouverture (de 19h00 à 22h30 au foyer du Mad) en petit comité en guise de mise en bouche pour cette semaine de campagne pleine d\'activités de qualité. Au programme de cette soirée : Mario kart, création de masques pour le bal de mercredi soir, piano et initiation à la danse Rock.'
+        content: 'Venez profiter d\'un petite soirée d\'ouverture (de 19h30 à 22h30 au foyer du Mad) en petit comité en guise de mise en bouche pour cette semaine de campagne pleine d\'activités de qualité. Au programme de cette soirée : Mario kart, création de masques pour le bal de mercredi soir, piano et initiation à la danse Rock.'
       }
     ]
   },

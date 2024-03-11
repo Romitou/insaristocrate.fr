@@ -109,9 +109,6 @@ const { data: events } = await useFetch('/api/events');
 const upcomingEvents = () => {
   let upcomingEvents = [];
   for (const event of events.value) {
-    if (Date.now() > Date.parse(event.end)) {
-      continue;
-    }
     if (!upcomingEvents[event.day]) {
       upcomingEvents[event.day] = [];
     }

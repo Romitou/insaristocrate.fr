@@ -136,6 +136,9 @@ const upcomingEvents = () => {
   let upcomingEvents = [];
   let i = 0;
   for (const event of events.value) {
+    if (!event.end && Date.now() > Date.parse(event.start) + 3600000) {
+      continue;
+    }
     if (Date.now() > Date.parse(event.end)) {
       continue;
     }
