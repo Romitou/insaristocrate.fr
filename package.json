@@ -1,6 +1,10 @@
 {
-  "name": "nuxt-app",
+  "name": "insaristocrate.fr",
+  "version": "1.0.0",
   "private": true,
+  "description": "Site officiel de la liste de campagne BDE INS'Aristocrate 2024 (INSA Rouen Normandie)",
+  "author": "Romain <romitou@protonmail.com>",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
